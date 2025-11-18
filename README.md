@@ -34,13 +34,9 @@ This system allows teams and individuals to efficiently track, organize, and com
 
 ## ⚙️ Tech Stack
 
-| Layer                | Technology                                                                          |
-| :------------------- | :---------------------------------------------------------------------------------- |
-| **Backend**          | [NestJS](https://nestjs.com/) (Node.js Framework)                                   |
-| **Database**         | PostgreSQL                                                                          |
-| **ORM**              | [Prisma ORM](https://www.prisma.io/)                                                |
-| **Frontend**         | [React](https://react.dev/) + TypeScript + [Tailwind CSS](https://tailwindcss.com/) |
-| **Containerization** | Docker & Docker Compose                                                             |
+1. Clone the repository
+   git clone https://github.com/Naod36/Task-Management-System
+   cd task-management-system
 
 ---
 
