@@ -60,7 +60,7 @@ To get this project running locally, you need **Node.js (v18+)**, **npm**, and *
 Clone the project from your GitHub account and navigate into the directory:
 
 ```bash
-git clone [https://github.com/Naod36/Task-Management-System.git](https://github.com/Naod36/Task-Management-System.git)
+git clone https://github.com/Naod36/Task-Management-System
 cd Task-Management-System
 ```
 
@@ -76,4 +76,12 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5432/taskdb"
 
 # JWT Secret for Authentication (Use a long, random string)
 JWT_SECRET="YOUR_SUPER_SECRET_KEY"
+```
+
+### 3. Start the Database (PostgreSQL via Docker)
+
+Start the PostgreSQL service defined in the `docker-compose.yml` file. This command will run the container in detached mode (`-d`):
+
+```bash
+docker compose up -d
 ```
