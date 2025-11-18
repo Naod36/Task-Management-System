@@ -45,8 +45,8 @@ docker-compose.yml → Local PostgreSQL setup
 
 ⚡ Setup Instructions
 
-1. Clone repository
-   git clone https://github.com/yourusername/task-management-system.git
+1. Clone the repository
+   git clone https://github.com/Naod36/Task-Management-System
    cd task-management-system
 
 2. Start PostgreSQL via Docker
