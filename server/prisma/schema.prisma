@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  name          String
+  email         String         @unique
+  createdAt     DateTime       @default(now())
+  password      String?
+  role          UserRole       @default(MEMBER)
+  tasks         Task[]         @relation("UserTasks")
+  taskReports   TaskReport[]
+  notifications Notification[]
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  tasks       Task[]
+  deadline    DateTime?
+  finished    Boolean   @default(false)
+}
+
+model Task {
+  id            Int            @id @default(autoincrement())
+  title         String
+  description   String?
+  status        TaskStatus     @default(PENDING)
+  deadline      DateTime?
+  projectId     Int
+  assigneeId    Int?
+  createdAt     DateTime       @default(now())
+  assignee      User?          @relation("UserTasks", fields: [assigneeId], references: [id])
+  project       Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  reports       TaskReport[]   @relation("TaskReports")
+  notifications Notification[]
+}
+
+model TaskReport {
+  id        Int      @id @default(autoincrement())
+  message   String // The user's text report
+  createdAt DateTime @default(now())
+
+  // Relations
+  taskId Int
+  userId Int
+
+  seen Boolean @default(false)
+  task Task    @relation("TaskReports", fields: [taskId], references: [id], onDelete: Cascade)
+  user User    @relation(fields: [userId], references: [id])
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  message   String
+  userId    Int
+  projectId Int?
+  taskId    Int? // optional, link to task
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  task Task? @relation(fields: [taskId], references: [id])
+}
+
+enum UserRole {
+  ADMIN
+  MEMBER
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  DONE
+}
