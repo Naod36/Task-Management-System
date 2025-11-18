@@ -34,6 +34,8 @@ This system allows teams and individuals to efficiently track, organize, and com
 
 ## ⚙️ Tech Stack
 
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+
 1. Clone the repository
    git clone https://github.com/Naod36/Task-Management-System
    cd task-management-system
