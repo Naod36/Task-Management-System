@@ -85,3 +85,43 @@ Start the PostgreSQL service defined in the `docker-compose.yml` file. This comm
 ```bash
 docker compose up -d
 ```
+
+### 4. Setup and Run the Backend (NestJS)
+
+Navigate to the `server/` directory, install dependencies, run database migrations, and start the development server.
+
+```bash
+cd server
+npm install
+npx prisma migrate dev --name init # Apply the schema to the new PostgreSQL container
+npm run start:dev
+```
+
+The backend server will be available at `http://localhost:3000`
+
+### 5. Setup and Run the Frontend (React)
+
+Open a new terminal tab/window, navigate back to the root, and then into the `client/` directory.
+
+```bash
+cd ..
+cd client
+npm install
+npm run dev
+```
+
+The frontend application will typically start at `http://localhost:5173` (determined by Vite).
+
+## 🧑‍💻 Example API Endpoints
+
+| Method  | Endpoint   | Description                       |
+| :------ | :--------- | :-------------------------------- |
+| `POST`  | /projects  | Create new project                |
+| `GET`   | /projects  | List all projects                 |
+| `POST`  | /tasks     | Create a new task                 |
+| `PATCH` | /tasks/id, | Update task status or assign user |
+| `GET`   | /users     | List all users                    |
+
+and so on...
+
+### 🚀 My very first project with nestjs
