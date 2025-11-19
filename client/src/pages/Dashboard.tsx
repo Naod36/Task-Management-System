@@ -210,10 +210,26 @@ export default function Dashboard({ onLogout }: DashboardProps) {
     (p) => calculateCompletion(p.tasks) === 100
   ).length;
 
-  const inProgressProjects = projects.filter((p) => {
-    const c = calculateCompletion(p.tasks);
-    return c > 0 && c < 100;
-  }).length;
+  const inProgressProjects = projects.filter((project) => {
+    const completionPercentage = calculateCompletion(project.tasks);
+
+    // Condition 1: Project is partially completed (has DONE tasks, but isn't 100% done)
+    const isPartiallyDone =
+      completionPercentage > 0 && completionPercentage < 100;
+
+    // Condition 2: Project has at least one IN_PROGRESS task
+    const hasInProgressTask = project.tasks.some(
+      (task) => task.status === "IN_PROGRESS"
+    );
+
+    // The project is considered "In Progress" if it meets the original criteria OR if it has any IN_PROGRESS task
+    return isPartiallyDone || hasInProgressTask;
+  });
+
+  // const inProgressProjects = projects.filter((p) => {
+  //   const c = calculateCompletion(p.tasks);
+  //   return c > 0 && c < 100;
+  // }).length;
 
   const userTasks = tasks.filter((t) => t.assigneeId === user?.id);
 
@@ -648,14 +664,14 @@ export default function Dashboard({ onLogout }: DashboardProps) {
                 <div className="w-full h-0.5 bg-neutral-800 my-2"></div>
                 <p className="text-neutral-200 text-sm">Total Projects </p>
               </div>
-
               {/* Projects In Progress */}
               <div className="bg-neutral-900 p-5 rounded-xl shadow-md flex flex-col items-center">
-                <h3 className="text-2xl font-bold">{inProgressProjects}</h3>
+                <h3 className="text-2xl font-bold">
+                  {inProgressProjects.length}
+                </h3>
                 <div className="w-full h-0.5 bg-neutral-800 my-2"></div>
                 <p className="text-neutral-200 text-sm">Projects In Progress</p>
               </div>
-
               {/* Projects Completed */}
               <div className="bg-neutral-900 p-5 rounded-xl shadow-md flex flex-col items-center">
                 <h3 className="text-2xl font-bold">{completedProjects}</h3>
