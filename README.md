@@ -112,6 +112,30 @@ npm run dev
 
 The frontend application will typically start at `http://localhost:5173` (determined by Vite).
 
+### 6. Setup Admin User via Prisma Studio
+By default, new users register with the ```MEMBER``` role. To access administrative controls, you must manually upgrade one user's role in the database:
+
+Ensure the database and backend are running.
+
+head to the registration page and register.
+
+Open a new terminal in the ```server/``` directory.
+
+Launch Prisma Studio:
+```bash
+
+npx prisma studio
+```
+A browser window will open, showing your database models. Click on the ```User``` model.
+
+Find the user you wish to make an Admin.
+
+In the ```role``` column for that user, change the value from ```MEMBER``` to ```ADMIN```.
+
+Save the change (Prisma Studio often saves automatically).
+
+Finished. You now have an admin role.
+
 ## 🧑‍💻 Example API Endpoints
 
 | Method  | Endpoint   | Description                       |
