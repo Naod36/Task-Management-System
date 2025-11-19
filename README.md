@@ -6,7 +6,7 @@
 
 ## 🚀 Overview
 
-This system allows teams and individuals to efficiently track, organize, and complete work across multiple projects. It provides a centralized dashboard where users can manage projects, assign and track tasks, set deadlines, monitor progress, and receive real-time notifications, moving beyond scattered emails and spreadsheets.
+This system allows teams and individuals to efficiently track, organise, and complete work across multiple projects. It provides a centralised dashboard where users can manage projects, assign and track tasks, set deadlines, monitor progress, and receive real-time notifications, moving beyond scattered emails and spreadsheets.
 
 ### Core Capabilities
 
@@ -22,7 +22,7 @@ This system allows teams and individuals to efficiently track, organize, and com
 
 | Feature                      | Description                                                |
 | :--------------------------- | :--------------------------------------------------------- |
-| **Add Projects**             | Create and organize projects with title and description.   |
+| **Add Projects**             | Create and organise projects with a title and description.   |
 | **Task Assignment**          | Assign tasks to users within a project.                    |
 | **Progress Tracking**        | Update task status (`PENDING`, `IN_PROGRESS`, `DONE`).     |
 | **Set Deadlines**            | Add deadlines for each task and project.                   |
@@ -86,7 +86,7 @@ Start the PostgreSQL service defined in the `docker-compose.yml` file. This comm
 docker compose up -d
 ```
 
-### 4. Setup and Run the Backend (NestJS)
+### 4. Set up and Run the Backend (NestJS)
 
 Navigate to the `server/` directory, install dependencies, run database migrations, and start the development server.
 
@@ -99,7 +99,7 @@ npm run start:dev
 
 The backend server will be available at `http://localhost:3000`
 
-### 5. Setup and Run the Frontend (React)
+### 5. Set up and Run the Frontend (React)
 
 Open a new terminal tab/window, navigate back to the root, and then into the `client/` directory.
 
@@ -112,7 +112,7 @@ npm run dev
 
 The frontend application will typically start at `http://localhost:5173` (determined by Vite).
 
-### 6. Setup Admin User via Prisma Studio
+### 6. Set up Admin User via Prisma Studio
 By default, new users register with the ```MEMBER``` role. To access administrative controls, you must manually upgrade one user's role in the database:
 
 1. Ensure the database and backend are running.
@@ -135,7 +135,7 @@ npx prisma studio
 8. Save the change (Prisma Studio often saves automatically).
 
       Finished. You now have an admin role.
-   
+---
 
 ## 🧑‍💻 Example API Endpoints
 
@@ -149,4 +149,4 @@ npx prisma studio
 
 and so on...
 
-### 🚀 My very first project with ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+### 🚀 My very first project with  ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
