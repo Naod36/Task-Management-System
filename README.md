@@ -124,4 +124,4 @@ The frontend application will typically start at `http://localhost:5173` (determ
 
 and so on...
 
-### 🚀 My very first project with nestjs
+### 🚀 My very first project with ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
