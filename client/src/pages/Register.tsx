@@ -93,7 +93,7 @@ export default function Register({ onLogin }: RegisterProps) {
         <div className="flex items-center my-6">
           <div className="grow border-t border-neutral-600"></div>
           <span className="mx-4 text-neutral-400 text-sm">
-            Or register with
+            Or Login through the link below
           </span>
           <div className="grow border-t border-neutral-600"></div>
         </div>
