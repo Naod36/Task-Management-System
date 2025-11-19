@@ -14,7 +14,7 @@ This system allows teams and individuals to efficiently track, organize, and com
 - **Assigning tasks** to specific users
 - **Tracking progress** and deadlines
 - Monitoring issues and workload adjustments
-- **Sending notifications** for task updates
+- **Sending notifications**
 
 ---
 
