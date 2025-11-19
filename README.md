@@ -115,26 +115,27 @@ The frontend application will typically start at `http://localhost:5173` (determ
 ### 6. Setup Admin User via Prisma Studio
 By default, new users register with the ```MEMBER``` role. To access administrative controls, you must manually upgrade one user's role in the database:
 
-Ensure the database and backend are running.
+1. Ensure the database and backend are running.
 
-head to the registration page and register.
+2. Head to the registration page and register.
 
-Open a new terminal in the ```server/``` directory.
+3. Open a new terminal in the ```server/``` directory.
 
-Launch Prisma Studio:
+4. Launch Prisma Studio:
 ```bash
 
 npx prisma studio
 ```
-A browser window will open, showing your database models. Click on the ```User``` model.
+5. A browser window will open, showing your database models. Click on the ```User``` model.
 
-Find the user you wish to make an Admin.
+6. Find the user you wish to make an Admin.
 
-In the ```role``` column for that user, change the value from ```MEMBER``` to ```ADMIN```.
+7. In the ```role``` column for that user, change the value from ```MEMBER``` to ```ADMIN```.
 
-Save the change (Prisma Studio often saves automatically).
+8. Save the change (Prisma Studio often saves automatically).
 
-Finished. You now have an admin role.
+      Finished. You now have an admin role.
+   
 
 ## 🧑‍💻 Example API Endpoints
 
